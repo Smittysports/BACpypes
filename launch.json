@@ -1,0 +1,131 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python (Ubuntu): Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "args": [
+                "--ini",
+                "BACpypesServer.ini",
+                "--deviceName",
+                "BrianBACpypes",
+                "--deviceIdentifier",
+                "94242",
+                "--objects",
+                "object_configurations/full_objects_cfg.py"
+            ],            
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "BACpypesSim: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "args":[
+                "--ini","BACpypesServer.ini",
+                "--deviceIdentifier", "4194302",
+                "--localAddress", "10.169.94.125:47809",
+                "--bbmdAddress", "10.169.94.125:47808",
+                "--objects", "object_configurations/basic_objects_cfg.py"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "BACpypesSim: Timer objects",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "args":[
+                "--ini","BACpypesServer.ini",
+                "--deviceIdentifier", "4194302",
+                "--localAddress", "10.169.94.125:47809",
+                "--bbmdAddress", "10.169.94.125:47808",
+                "--objects", "object_configurations/timer_objects_cfg.py"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },        
+        {
+            "name": "BACpypesSim: Current File (basic_objects_cfg)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "args":[
+                "--ini","BACpypesServer.ini",
+                "--deviceIdentifier", "4194302",
+                "--localAddress", "10.0.0.77:47809",
+                "--bbmdAddress", "10.0.0.77:47808",
+                "--objects", "object_configurations/basic_objects_cfg.py"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "BACpypesSim: Current File (No objects)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "args":[
+                "--ini","BACpypesServer.ini",
+                "--deviceIdentifier", "4194302",
+                "--localAddress", "10.0.0.77:47809",
+                "--bbmdAddress", "10.0.0.77:47808",
+                "--objects", "object_configurations/empty_config.py"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },     
+        {
+            "name": "BACpypesSim: Current File (full config)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "args":[
+                "--ini","BACpypesServer.ini",
+                "--deviceIdentifier", "4194302",
+                "--localAddress", "10.0.0.77:47809",
+                "--bbmdAddress", "10.0.0.77:47808",
+                "--objects", "object_configurations/full_objects_cfg.py"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },     
+        {
+            "name": "BACpypesSim: Current File (No BBMD)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "args":[
+                "--ini","BACpypesServer.ini",
+                "--deviceIdentifier", "4194302",
+                "--localAddress", "192.168.1.105:47808",
+                "--objects", "object_configurations/empty_config.py"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "BACpypesSim: with debugging",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "args":[
+                "--ini","BACpypesServer.ini",
+                "--deviceIdentifier", "4194302",
+                "--localAddress", "10.0.0.246:49848",
+                "--bbmdAddress", "10.0.0.246:49849",
+                "--debug", "__main__",
+                "--objects", "object_configurations/basic_objects_cfg_small.py"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+    ]
+}
