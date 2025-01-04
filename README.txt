@@ -1,16 +1,13 @@
-This is a simulated BACnet device intended for use as a reference device for testing.  It is based on the open-source BACpypes BACnet stack [1].
+Instructions to create an executable to run the BACpypes python scripts
 
-The simulator supports loading a set of objects at run time (from a command line switch).  Samples of the config files are in the object_configurations folder.  Also supported is runtime importing of modules - in order to execute various test senarios (test_plugins folder).  These can be copied to the TestData\BACnet folder in the SE.WorkStation.BACnet.AcceptanceTest project.
-
-Nessisary tools for building:
-Python 2.7 (on system PATH) [2]
-cx_freeze [3]
-7-zip (on system PATH) [4]
-
-Note:
-For errors or changes to the bacpypes stack, there is a folder for patches.  These should be applied to bacpypes before building.  Ideally, bug fixes should be submitted to bacpypes maintainer (Joel Bender).
-
-[1] http://bacpypes.sourceforge.net/
-[2] https://www.python.org/download/releases/2.7
-[3] http://cx-freeze.sourceforge.net/
-[4] http://www.7-zip.org/
+1)	sudo apt install python3-venv
+2)	python3 -m venv .venv
+3)	source .venv/bin/activate
+4)	pip install pyinstaller
+5)	pip install ConfigParser
+6)	pyinstaller BACpypesSim.spec
+7)	sudo apt install 7zip
+8)	7z a BACpypesSimulator-2.0.0-se1.zip .\dist\BACpypesSim\*
+    a.	Only needed to zip up the executable
+9) cd dist/BACpypesSim
+10) ./BACpypesSim --ini=../../BACpypesSim.ini --localAddress=0.0.0.0 --objects=../../object_configurations/basic_objects_cfg.py

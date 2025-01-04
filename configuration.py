@@ -29,7 +29,7 @@ class SimulatorConfig(object):
         self.args = cmd_args
 
         self.config = configparser.ConfigParser(_default_config_options)
-        self.config.readfp(cmd_args.ini)
+        self.config.read_file(cmd_args.ini)
    
         if not self.config.has_section('BACpypes'):
             print("INI file with BACpypes section required")
