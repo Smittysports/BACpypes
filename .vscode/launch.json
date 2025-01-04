@@ -53,15 +53,14 @@
             "justMyCode": true
         },        
         {
-            "name": "BACpypesSim: Current File (basic_objects_cfg)",
+            "name": "BACpypesSim: Current File no BBMD (basic_objects_cfg)",
             "type": "debugpy",
             "request": "launch",
             "program": "${file}",
             "args":[
                 "--ini","BACpypesServer.ini",
                 "--deviceIdentifier", "4194302",
-                "--localAddress", "10.0.0.77:47809",
-                "--bbmdAddress", "10.0.0.77:47808",
+                "--localAddress", "10.0.2.15:47808",
                 "--objects", "object_configurations/basic_objects_cfg.py"
             ],
             "console": "integratedTerminal",
